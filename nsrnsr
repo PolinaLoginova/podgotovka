@@ -1,0 +1,38 @@
+df.tail(1)
+
+	1 	2 	3
+1 	7 	8 	9
+
+df.loc[df[2]==8] = np.nan 
+
+df.fillna(2, inplace = True)
+
+df
+
+	1 	2 	3
+0 	4.0 	5.0 	6.0
+1 	2.0 	2.0 	2.0
+
+df[1].describe()
+
+count    2.000000
+mean     3.000000
+std      1.414214
+min      2.000000
+25%      2.500000
+50%      3.000000
+75%      3.500000
+max      4.000000
+Name: 1, dtype: float64
+
+df[1] = df[1].astype(int)
+
+df
+
+	1 	2 	3
+0 	4 	5.0 	6.0
+1 	2 	2.0 	2.0
+
+df[1].unique()
+
+array([4, 2])
